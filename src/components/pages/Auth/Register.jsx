@@ -41,7 +41,7 @@ const Register = () => {
           text="Telefone"
           type="text"
           name="phone"
-          placeholder="Digite seu telefone"
+          placeholder="exemplo: 21 980999181"
           handleOnChange={handleChange}
           required
         />
