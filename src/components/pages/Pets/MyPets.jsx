@@ -12,6 +12,7 @@ import RoundedImages from "../../Layouts/RoundedImage";
 function MyPets() {
   const [pets, setPets] = useState([]);
   const [token] = useState(localStorage.getItem("token") || "");
+ 
   const { setFlashMessage } = useFlashMessage();
   const navigate = useNavigate()
   useEffect(() => {
@@ -56,24 +57,27 @@ function MyPets() {
   async function concludeAdoption(id) {
     let msgType = "success";
     let msgText = "Adoção concluída com sucesso";
+    
     const data = await api
       .patch(`/pets/conclude/${id}`, {
         headers: {
-          Authorization: `Bearer ${JSON.parse(token)}`,
+          Authorization: `Bearer ${token}`,
         },
       })
       .then((response) => {
-        
-       return  response.data();
+        navigate('/pet/myadoptions')
+       return  response.data;
          
-         return;
+        
       })
       .catch((error) => {
-        // console.log(error);
+        console.log("token enviado:", token)
+         console.log(error.message);
         msgText =
           error.response?.data?.error ||
           error.response?.data?.message ||
-          "Ocorreu um erro inesperado";
+          "Ocorreu um erro"
+          ;
         msgType = "error";
       });
     setFlashMessage(msgText, msgType);

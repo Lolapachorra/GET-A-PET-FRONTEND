@@ -12,6 +12,7 @@ function PetDetails() {
   const { setFlashMessage } = useFlashMessage();
   const [token] = useState(localStorage.getItem('token') || '');
   const navigate = useNavigate();
+  const [submitButton, setsubmitButton] = useState(false)
 
   useEffect(() => {
     api
@@ -30,6 +31,7 @@ function PetDetails() {
   }, [id, token]);
 
   async function schedule() {
+    setsubmitButton(true) // Enable the submit button after the request is made
     let msgType = 'success';
     let msgText = 'Solicitação de visita realizada com sucesso';
 
@@ -44,8 +46,11 @@ function PetDetails() {
         }
       )
       .then((response) => {
-        navigate('/pet/myadoptions')
+        navigate('/pet/myadoptions');
+       
         console.log(response.data);
+        
+
       })
       .catch((error) => {
         msgText =
@@ -53,6 +58,7 @@ function PetDetails() {
           error.response?.data?.message ||
           'Ocorreu um erro inesperado';
         msgType = 'error';
+        setsubmitButton(false)
       });
 
     setFlashMessage(msgText, msgType);
@@ -82,7 +88,7 @@ function PetDetails() {
             <span className="bold">Idade:</span> {pet.age} anos
           </p>
           {token ? (
-            <button onClick={schedule}>Solicitar uma Visita</button>
+            <button onClick={schedule} disabled={submitButton} >Solicitar uma Visita</button>
           ) : (
             <p>
               Você precisa <Link to="/register">criar uma conta</Link> para

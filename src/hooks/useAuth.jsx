@@ -38,6 +38,8 @@ export default function useAuth(){
      // console.log(data.token)
       //console.log(data)
       navigate('/')
+      window.location.reload();
+      
     }
     async function login(user){
         let msgText = "Login realizado com sucesso"
@@ -56,7 +58,8 @@ export default function useAuth(){
     function logout(){
         localStorage.removeItem('token')
         setAuthenticated(false)
-        navigate('/login')
+        navigate('/login');
+        
         setFlashMessage("Você foi deslogado com sucesso", "success")
         api.defaults.headers.Authorization = undefined
     }

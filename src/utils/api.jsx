@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+//"https://get-a-pet-apirestful.onrender.com"
 export default axios.create({
-    baseURL: "https://get-a-pet-apirestful.onrender.com"
+    baseURL: "http://localhost:5000"
 })

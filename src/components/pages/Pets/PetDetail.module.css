@@ -37,3 +37,10 @@
   .pet_details_container button:hover {
     background-color: #1c8a42;
   }
+
+    .pet_details_container button:disabled{
+      background-color: gray;
+      color: white;
+      cursor: not-allowed;
+      opacity: 0.5;
+    }
