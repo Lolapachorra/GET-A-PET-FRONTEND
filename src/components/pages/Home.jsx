@@ -10,7 +10,7 @@ const Home = () => {
       setPets(response.data.pets);
     });
   }, []);
-
+ 
   return (
     <section>
       <div className={styles.pet_home_header}>

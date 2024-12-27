@@ -65,7 +65,7 @@ function MyPets() {
         },
       })
       .then((response) => {
-        navigate('/pet/myadoptions')
+        navigate('/')
        return  response.data;
          
         

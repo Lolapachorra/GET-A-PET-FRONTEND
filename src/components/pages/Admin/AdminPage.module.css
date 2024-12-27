@@ -1,0 +1,28 @@
+
+/* admin tools */
+.admin_tools{
+    font-size: 0.5;
+    list-style: none;
+  
+}
+.admin_tools li{
+    margin-bottom: 2em;
+}
+
+.admin_tools li a {
+    text-decoration: none;
+    color: #16479d;
+    font-weight: bold;
+    margin-right: 1em;
+    transition: 0.5s;
+    cursor: pointer;
+    padding: 0.5em 0.8em;
+    border-radius: 5px;
+   
+    
+}
+
+.admin_tools li:hover > a {
+    background-color: #16479d;
+    color: #fff;
+}

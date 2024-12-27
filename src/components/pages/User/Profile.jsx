@@ -97,6 +97,7 @@ function Profile() {
           placeholder="Digite o seu Nome"
           value={user.name || ""}
           handleOnChange={handleChange}
+          maxLength={100}
         />
         <Input
           text="Telefone"

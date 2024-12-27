@@ -8,6 +8,8 @@ const Input = ({
   handleOnChange,
   value,
   multiple,
+  max,
+  maxLength
 }) => {
   return (
     <div className={styles.form_control}>
@@ -20,6 +22,8 @@ const Input = ({
         onChange={handleOnChange}
         value={value}
         {...(multiple ? {multiple} : '')}
+        max={max}
+        maxLength={maxLength}
       />
     </div>
   );

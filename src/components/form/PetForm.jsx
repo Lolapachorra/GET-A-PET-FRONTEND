@@ -61,14 +61,16 @@ function PetForm({ handleSubmit, petData, btnText }) {
         handleOnChange={handleChange}
         placeholder="Digite um nome"
         value={pet.name || ""}
+        maxLength={30}
       />
       <Input
         text="Idade do pet"
         type="text"
         name="age"
         handleOnChange={handleChange}
-        placeholder="Digite a idade"
+        placeholder="Digite a idade, se nao souber coloque ??"
         value={pet.age || ""}
+        maxLength={2}
       />
       <Input
         text="Peso do pet"
@@ -77,6 +79,7 @@ function PetForm({ handleSubmit, petData, btnText }) {
         handleOnChange={handleChange}
         placeholder="Digite o peso do pet"
         value={pet.weight || ""}
+        max={100}
       />
       <Select
         text="Selecione a cor"

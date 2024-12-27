@@ -13,10 +13,15 @@ import Message from "./components/Layouts/Message";
 import MyPets from "./components/pages/Pets/MyPets";
 import AddPet from "./components/pages/Pets/AddPet";
 import EditPet from "./components/pages/Pets/EditPet";
+import Admin from "./components/pages/Admin/AdminPage";
+import AllUsers from "./components/pages/Admin/AllUsers";
+import AllPets from "./components/pages/Admin/AllPets";
+import EditUserAdmin from "./components/pages/Admin/EditUserAdmin";
 /* context */
 import { UserProvider } from "./context/UserContext";
 import PetDetail from "./components/pages/Pets/PetDetail";
 import MyAdoptions from "./components/pages/Pets/MyAdoptions";
+
 
 
 const App = () => {
@@ -34,10 +39,14 @@ const App = () => {
               <Route path="/" element={<Home />} />
               <Route path='/user/mypets' element={<MyPets />} />
               <Route path="/pet/add" element={<AddPet />} />
+              <Route path="/user/admin" element={<Admin />} />
               <Route path="/pet/myadoptions" element={<MyAdoptions />}/>
+              <Route path="user/admin/allusers" element={<AllUsers />} />
+              <Route path="user/admin/allpets" element={<AllPets />}/>
               <Route path="/pet/edit/:id" element={<EditPet />} />
+              <Route path="/user/admin/edit/:id" element={<EditUserAdmin />} />
               <Route path="/pet/:id" element={<PetDetail />} />
-              
+               
             </Routes>
           </Container>
           <Footer />

@@ -35,7 +35,7 @@ const Register = () => {
           name="name"
           placeholder="Digite seu nome"
           handleOnChange={handleChange}
-          required
+          maxLength={100}
         />
         <Input
           text="Telefone"
@@ -43,7 +43,7 @@ const Register = () => {
           name="phone"
           placeholder="exemplo: 21 980999181"
           handleOnChange={handleChange}
-          required
+          
         />
         <Input
           text="Email"
@@ -51,7 +51,7 @@ const Register = () => {
           name="email"
           placeholder="Digite seu email"
           handleOnChange={handleChange}
-          required
+          
         />
         <Input
           text="Senha"
@@ -59,7 +59,7 @@ const Register = () => {
           name="password"
           placeholder="Digite sua senha"
           handleOnChange={handleChange}
-          required
+          
         />
         <Input
           text="Confirmar senha"
@@ -67,7 +67,7 @@ const Register = () => {
           name="confirmPassword"
           placeholder="Confirme sua senha"
           handleOnChange={handleChange}
-          required
+          
         />
         <input type="submit" disabled={submitButton} value="Cadastrar" />
       </form>
