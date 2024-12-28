@@ -17,10 +17,12 @@ import Admin from "./components/pages/Admin/AdminPage";
 import AllUsers from "./components/pages/Admin/AllUsers";
 import AllPets from "./components/pages/Admin/AllPets";
 import EditUserAdmin from "./components/pages/Admin/EditUserAdmin";
+import SearchResults from "./components/form/SearchResults";
 /* context */
 import { UserProvider } from "./context/UserContext";
 import PetDetail from "./components/pages/Pets/PetDetail";
 import MyAdoptions from "./components/pages/Pets/MyAdoptions";
+
 
 
 
@@ -35,6 +37,7 @@ const App = () => {
             <Routes>
               <Route path="/login" exact element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/pets/search" element={<SearchResults />}/>
               <Route path="/user/profile" element={<Profile />} />
               <Route path="/" element={<Home />} />
               <Route path='/user/mypets' element={<MyPets />} />

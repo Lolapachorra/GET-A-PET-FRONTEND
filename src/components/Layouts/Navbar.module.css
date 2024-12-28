@@ -40,3 +40,34 @@
     background-color: #16479d;
     color: #fff;
   }
+
+  .search_bar{
+    justify-content: center;
+    margin: 1em;
+    align-items: center;
+    transition: 0.5s;
+  }
+  
+  .search_bar input[type="text"]{
+    width: 23em;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+  }
+
+  .search_bar button{
+    background-color: #16479d;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  
+  .search_bar button:hover{
+    background-color: #fff;
+    color: #16479d;
+  }
