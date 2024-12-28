@@ -20,7 +20,7 @@ const SearchResults = () => {
     setSearchTerm(search);
 
     axios
-      .get(`${import.meta.env.VITE_URL_API}/pets/search?search=${encodeURIComponent(search)}`)
+      .get(`${import.meta.env.VITE_URL_API}pets/search?search=${encodeURIComponent(search)}`)
       .then((response) => {
         setPets(response.data.pets);
         setPetsQty(response.data.petsQty)
